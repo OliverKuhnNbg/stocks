@@ -33,8 +33,8 @@ export class StocksService {
    
   load(symbols: any) {
     if (symbols) {
-      return this.http.get<Array<StockInterface>>(service + '/stocks/ snapshot?symbols=' + symbols.join());
+      return this.http.get<Array<StockInterface>>(service + '/stocks/snapshot?symbols=' + symbols.join());
     }
-    return undefined;
+    return this.http.get<Array<StockInterface>>(service + '/stocks');
   }
 }
